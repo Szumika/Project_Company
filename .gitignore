@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .idea
 *.iml
 target/
@@ -61,6 +62,8 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 ### Java template
+=======
+>>>>>>> 0a5667622d9075d8cd95438ff875fb9769c699e4
 # Compiled class file
 *.class
 
@@ -76,6 +79,10 @@ fabric.properties
 # Package Files #
 *.jar
 *.war
+<<<<<<< HEAD
+=======
+*.nar
+>>>>>>> 0a5667622d9075d8cd95438ff875fb9769c699e4
 *.ear
 *.zip
 *.tar.gz
@@ -83,6 +90,7 @@ fabric.properties
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+<<<<<<< HEAD
 ### Eclipse template
 
 .metadata
@@ -140,3 +148,5 @@ local.properties
 .cache-main
 .scala_dependencies
 .worksheet
+=======
+>>>>>>> 0a5667622d9075d8cd95438ff875fb9769c699e4
