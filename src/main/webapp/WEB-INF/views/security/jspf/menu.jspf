@@ -1,0 +1,15 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" isELIgnored="false"%>
+<div class="linemenu">
+    <table border="1">
+        <tr>
+            <td><a href="/">Start</a> </td>
+            <td><a href="/news">Aktualnosci</a></td>
+            <td><a href="/items">Produkty</a></td>
+            <td><a href="/order">Zloz zamowienie</a></td>
+            <td><a href="/group">Brygady</a></td>
+            <td><a href="/communication">kontakt</a></td>
+        </tr>
+    </table>
+</div>
