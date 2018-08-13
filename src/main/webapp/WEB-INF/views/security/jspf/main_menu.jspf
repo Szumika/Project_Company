@@ -16,7 +16,7 @@
         <p>
             Jestes zalogowany jako: ${principal.username} <a
                 href="<c:url value="logout" />"> Logout</a>
-            Panel Administracyjny: <a href="/PanelAdmin">wejdz</a>
+            Panel Administracyjny: <a href="/admin">wejdz</a>
         </p>
         <div class="linemenu">
             <table border="1">

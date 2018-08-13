@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/register", "/login").permitAll()
                 .antMatchers("/","/order","/news","/items","/group","/communication").access("hasRole('ROLE_USER')")
-//                .anyRequest().access("hasRole('ROLE_ADMIN')")
+                .antMatchers("/","/order","/news","/items","/group","/communication","/admin").access("hasRole('ROLE_ADMIN')")
                 .and().formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/", true)
@@ -29,14 +29,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 
-        http.authorizeRequests().antMatchers("/register","/login").permitAll()
-                .anyRequest().access("hasRole('ROLE_ADMIN')")
-                .and().formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/",true)
-
-                .and().logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
     }
 
     @Autowired
