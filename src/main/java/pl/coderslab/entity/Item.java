@@ -57,4 +57,12 @@ public class Item {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return " Produkt - " +
+                "Nazwa:'" + name + '\'' +
+                ", kolor:'" + color + '\'' +
+                ", cena:" + prize;
+    }
 }

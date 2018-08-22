@@ -9,11 +9,11 @@
 <html>
 <head>
     <title>Admin Page</title>
-    <%@ include file="security/jspf/head_config.jspf"%>
+    <%@ include file="../security/jspf/head_config.jspf"%>
 
 </head>
 <body>
-<%@ include file="security/jspf/main_menu.jspf"%>
+<%@ include file="../security/jspf/admin_menu.jspf"%>
 
 <p> Admin moze wszystko trzeba bedzie zrobic formularze do edycji usuwania dodoawania :) </p>
 </body>

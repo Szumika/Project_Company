@@ -1,35 +1,39 @@
 package pl.coderslab.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.entity.*;
+import pl.coderslab.entity.security.User;
 import pl.coderslab.repository.*;
+import pl.coderslab.repository.security.UserRepository;
 
 import javax.validation.Valid;
-import java.awt.print.Book;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
 public class MenuContoller {
     @Autowired
-    NewsRepository nr;
+    private NewsRepository nr;
     @Autowired
-    OrderRepository or;
+    private OrderRepository or;
     @Autowired
-    IteamsRepository ir;
+    private IteamsRepository ir;
     @Autowired
-    GroupsRepository gr;
+    private GroupsRepository gr;
     @Autowired
-    EmployeeRepository er;
+    private EmployeeRepository er;
+    @Autowired
+    private UserRepository ur;
     @RequestMapping("/")
     public String start(){
         return "index";
     }
-@RequestMapping("/news")
+@GetMapping("/news")
     public String news(){
     return "news";
 }
@@ -64,12 +68,13 @@ public String employee(@PathVariable long grpid , Model model){
     }
 
     @PostMapping("/order")
-    public String addpostvali(@Valid Orders order, BindingResult result){
+    public String addpostvali(@Valid Orders order, BindingResult result, Authentication auth){
         if(result.hasErrors()){
             return "addFormValid";
         }
         order.setCreated(LocalDateTime.now());
-//        order.setUser();
+        User user = ur.findByUsername(auth.getName());
+        order.setUser(user);
         this.or.save(order);
         return  "/items";
     }

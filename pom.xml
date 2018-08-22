@@ -107,6 +107,15 @@
       <artifactId>spring-security-taglibs</artifactId>
       <version>4.2.1.RELEASE</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.20</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
 
   <build>

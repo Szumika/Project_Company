@@ -15,7 +15,6 @@
 <body>
 <%@ include file="security/jspf/main_menu.jspf"%>
 
-<sec:authentication var="principal" property="principal" />
 <form:form method="post" modelAttribute="order">
     <div>
         <form:label path="quantity">Ilosc:</form:label>
@@ -28,7 +27,6 @@
                      itemLabel="name" itemValue="id"/>
         <form:errors path="item"></form:errors>
     </div>
-
     <input type="submit">
 </form:form>
 <%--<input type="submit">--%>
