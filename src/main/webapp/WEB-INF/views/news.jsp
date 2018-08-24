@@ -11,17 +11,30 @@
 <head>
     <title>Aktualnosci</title>
     <%@ include file="security/jspf/head_config.jspf"%>
+    <c:url value="/resources/jpg/tlo.jpg" var="index1"/>
+    <style>
+        body {
+
+            background-image: url(${index1});
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 <%@ include file="security/jspf/main_menu.jspf"%>
+<c:url value="/resources/css/style.css" var="style"/>
+<link href="${style}" rel="stylesheet"/>
 
-<p>Aktualnosci:</p>
-<c:forEach var="news" items="${news}">
-    <h3>${news.title}</h3>
+<div >
+    <p>Aktualnosci:</p>
+    <c:forEach var="news" items="${news}">
+    <h2 >${news.title}</h2>
     <p>${news.created}</p>
-    <div>
-        ${news.description}
-    </div>
+
+            ${news.description}
+
+</div>
+
 
 
 </c:forEach>

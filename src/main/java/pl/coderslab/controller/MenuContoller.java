@@ -72,6 +72,7 @@ public String employee(@PathVariable long grpid , Model model){
         if(result.hasErrors()){
             return "addFormValid";
         }
+        order.setStatus("W trakcie przygotowania");
         order.setCreated(LocalDateTime.now());
         User user = ur.findByUsername(auth.getName());
         order.setUser(user);

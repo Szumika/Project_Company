@@ -7,13 +7,26 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" isELIgnored="false" %>
+
 <html>
 <head>
     <title>Title</title>
     <%@ include file="security/jspf/head_config.jspf"%>
+    <c:url value="/resources/jpg/tlo.jpg" var="index1"/>
+    <style>
+        body {
+
+            background-image: url(${index1});
+            background-size: 100%;
+        }
+    </style>
+
 </head>
 <body>
 <%@ include file="security/jspf/main_menu.jspf"%>
+<c:url value="/resources/css/style.css" var="style"/>
+<link href="${style}" rel="stylesheet"/>
+
     <c:forEach var="group" items="${groups}">
         <div>
                 ${group.groupName} - <a href="/employee/${group.id}">Lista pracowników Brygady</a>

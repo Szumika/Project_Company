@@ -1,4 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: dominik
@@ -10,9 +12,19 @@
 <html>
 <head>
     <title>Edit grp</title>
+    <c:url value="/resources/jpg/tlo.jpg" var="index1"/>
+    <style>
+        body {
+
+            background-image: url(${index1});
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 <%@ include file="../../security/jspf/admin_menu.jspf"%>
+<c:url value="/resources/css/style.css" var="style"/>
+<link href="${style}" rel="stylesheet"/>
 
 <form:form method="post" modelAttribute="group">
     <div>

@@ -11,6 +11,7 @@ public class Employee {
     private String lastname;
     private double hoursPerMonth;
     private double salaryPerHouer;
+    private double salary;
     @ManyToOne(fetch = FetchType.EAGER)
     private groups group;
 
@@ -23,6 +24,14 @@ public class Employee {
     }
 
     public Employee() {
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     public long getId() {

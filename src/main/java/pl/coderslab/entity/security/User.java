@@ -112,6 +112,9 @@ public class User {
         if (!email.equals(user.email)) {
             return false;
         }
+        if(!username.equals(user.username)){
+            return false;
+        }
         return true;
     }
 

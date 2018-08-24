@@ -7,15 +7,27 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" isELIgnored="false" %>
+
 <html>
 <head>
     <title>Aktualnosci</title>
+    <c:url value="/resources/jpg/tlo.jpg" var="index1"/>
+    <style>
+        body {
+
+            background-image: url(${index1});
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 <%@ include file="../security/jspf/admin_menu.jspf"%>
-<h3>Dodaj</h3>
+<c:url value="/resources/css/style.css" var="style"/>
+<link href="${style}" rel="stylesheet"/>
+
+<h2>Dodaj</h2>
 <div><a href="/add/news">Dodaj news</a> </div>
-<h3>Aktualnosci:</h3>
+<h2>Aktualnosci:</h2>
 <c:forEach var="news" items="${news1}">
     <p>${news.title} - <a href="/news/edit/${news.id}">edycja</a> -<a href="newsdel/${news.id}">usun</a></p>
 </c:forEach>

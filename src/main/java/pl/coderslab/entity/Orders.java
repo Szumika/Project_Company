@@ -15,6 +15,7 @@ private long id;
 @Min(value = 50,message = "Minimalne zamowienie to 50 sztuk :)")
 private int quantity;
 private LocalDateTime created;
+private String status;
 @NotNull(message = "wybierz produkt!")
 @OneToOne
 private Item item;
@@ -37,6 +38,14 @@ private User user;
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getQuantity() {

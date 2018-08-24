@@ -26,25 +26,11 @@
 <c:url value="/resources/css/style.css" var="style"/>
 <link href="${style}" rel="stylesheet"/>
 
-<form:form method="post" modelAttribute="employee">
+<form:form method="post" modelAttribute="order">
     <div>
-        <form:label path="firstname">Imie:</form:label>
-        <form:input path="firstname" id="firstname"/>
+        <form:label path="status">Status:</form:label>
+        <form:input path="status" id="status"/>
     </div>
-    <div>
-        <form:label path="lastname">Nazwisko:</form:label>
-        <form:input path="lastname" id="lastname"/>
-    </div>
-    <div>
-        <form:label path="salaryPerHouer">Stawka na godzine:</form:label>
-        <form:input path="salaryPerHouer"  id="salaryPerHouer"/>
-    </div>
-    <div>
-        <form:label path="hoursPerMonth">Ilosc godin w miesiacu:</form:label>
-        <form:input path="hoursPerMonth"  id="hoursPerMonth"/>
-    </div>
-
-    <form:hidden path="group.id"></form:hidden>
     <input type="submit">
 </form:form>
 
