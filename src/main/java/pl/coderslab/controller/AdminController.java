@@ -61,8 +61,8 @@ public class AdminController {
     }
 
     @PostMapping("/grp/edit/{id}")
-    public String editgrppost(@ModelAttribute groups group){
-        gr.save(group);
+    public String editgrppost(@ModelAttribute groups groups){
+        gr.save(groups);
         return "redirect:../../groups";
     }
 
@@ -184,13 +184,13 @@ public class AdminController {
         final String username = "szumika12@gmail.com";
         final String pass = "qwopASKL!@";
 
-        Properties props = new Properties();
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
+        Properties prop = new Properties();
+        prop.put("mail.smtp.host", "smtp.gmail.com");
+        prop.put("mail.smtp.port", "587");
+        prop.put("mail.smtp.auth", "true");
+        prop.put("mail.smtp.starttls.enable", "true"); //TLS
 
-        Session session = Session.getInstance(props,
+        Session session = Session.getInstance(prop,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
                         return new PasswordAuthentication(username, pass);

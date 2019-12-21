@@ -1,8 +1,10 @@
 package pl.coderslab.model.security;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import pl.coderslab.validation.security.PasswordMatches;
 
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 

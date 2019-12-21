@@ -28,7 +28,7 @@ public class UserService implements IUserService {
         user.setUsername(accountDto.getUsername());
         user.setPassword(accountDto.getPassword());
         user.setEmail(accountDto.getEmail());
-        if(accountDto.getUsername().equals("Maciej123")){
+        if(accountDto.getUsername().equals("Dominik")){
             user.setRoles(Arrays.asList("ROLE_ADMIN"));
         }
         else{
