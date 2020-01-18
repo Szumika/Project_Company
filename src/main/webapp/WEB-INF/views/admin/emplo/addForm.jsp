@@ -16,19 +16,19 @@
     <style>
         body {
 
-            background-image: url(${index1});
+            background-color: #ffffff ;
             background-size: 100%;
         }
     </style>
 </head>
-<body>
+<body style="text-align:center;">
 <%@ include file="../../security/jspf/admin_menu.jspf"%>
 <c:url value="/resources/css/style.css" var="style"/>
 <link href="${style}" rel="stylesheet"/>
 
 <form:form method="post" modelAttribute="employee">
     <div>
-        <form:label path="firstname">Imie:</form:label>
+        <form:label path="firstname">Imię:</form:label>
         <form:input path="firstname" id="firstname"/>
     </div>
     <div>
@@ -40,7 +40,7 @@
         <form:input path="salaryPerHouer"  id="salaryPerHouer"/>
     </div>
     <div>
-        <form:label path="hoursPerMonth">Ilosc godin w miesiacu:</form:label>
+        <form:label path="hoursPerMonth">Ilosc godzin w miesiącu:</form:label>
         <form:input path="hoursPerMonth"  id="hoursPerMonth"/>
     </div>
 

@@ -29,26 +29,25 @@
     <style>
         body {
 
-            background-image: url(${index1});
+            background-color: #ffffff ;
             background-size: 100%;
         }
     </style>
 </head>
-<body>
+<body style="text-align:center;">
 <%@ include file="security/jspf/main_menu.jspf"%>
 <c:url value="/resources/css/style.css" var="style"/>
 <link href="${style}" rel="stylesheet"/>
 
 <div>
-    <h2>Artykuly:</h2>
-    <ul>
+    <h2>Artykuły:</h2>
         <c:forEach varStatus="count" var="item" items="${items}">
             <%--<c:choose><c:when test="${count.index}=0"></c:when>--%>
             <%--<img class="product" src="${produkt0}">--%>
             <%--</c:choose>--%>
-            <li>Nazwa produktu: ${item.name} Kolor: ${item.color} Cena: ${item.prize} zl </li>
+            <div>Nazwa produktu: ${item.name} Kolor: ${item.color} Cena: ${item.prize} zl </div>
         </c:forEach>
-    </ul>
+
 </div>
 
 </body>

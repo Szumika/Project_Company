@@ -5,11 +5,11 @@
     <table border="1">
         <tr>
             <td><a href="/">Start</a> </td>
-            <td><a href="/news">Aktualnosci</a></td>
+            <td><a href="/news">Aktualności</a></td>
             <td><a href="/items">Produkty</a></td>
-            <td><a href="/order">Zloz zamowienie</a></td>
+            <td><a href="/order">Zlóż zamówienie</a></td>
             <td><a href="/group">Brygady</a></td>
-            <td><a href="/communication">kontakt</a></td>
+            <td><a href="/communication">Kontakt</a></td>
         </tr>
     </table>
 </div>

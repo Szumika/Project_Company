@@ -5,5 +5,5 @@ import pl.coderslab.entity.Item;
 import pl.coderslab.entity.security.User;
 
 public interface IteamsRepository extends JpaRepository<Item, Long> {
-
+Item findByNameContaining(String name);
 }

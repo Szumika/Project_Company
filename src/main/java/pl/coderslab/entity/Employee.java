@@ -1,5 +1,7 @@
 package pl.coderslab.entity;
 
+import pl.coderslab.entity.security.User;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,7 +16,8 @@ public class Employee {
     private double salary;
     @ManyToOne(fetch = FetchType.EAGER)
     private groups group;
-
+    @OneToOne
+    private User user;
     public groups getGroup() {
         return group;
     }
@@ -24,6 +27,14 @@ public class Employee {
     }
 
     public Employee() {
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public double getSalary() {

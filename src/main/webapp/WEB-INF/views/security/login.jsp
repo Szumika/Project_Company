@@ -8,16 +8,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <%@ include file="jspf/head_config.jspf"%>
-    <c:url value="/resources/jpg/tlo.jpg" var="index1"/>
+    <c:url value="/resources/jpg/head.png" var="index1"/>
+
     <style>
         body {
 
-            background-image: url(${index1});
+            background-color: #ffffff ;
             background-size: 100%;
         }
     </style>
 </head>
-<body>
+<body style="text-align:center;">
+<div align="center">
+    <img src="${index1}">
+</div>
 <%@ include file="jspf/header.jspf"%>
 <%@ include file="jspf/main_menu.jspf"%>
 <c:url value="/resources/css/style.css" var="style"/>
@@ -25,10 +29,10 @@
 <p class='error'>${msg}</p>
 <form method="post">
     <p>
-        Username <input type="text" name="username" placeholder="" />
+        Login <input type="text" name="username" placeholder="" />
     </p>
     <p>
-        Password <input type="password" name="password" placeholder="" />
+        Hasło <input type="password" name="password" placeholder="" />
     </p>
     <p>
         <input type="hidden" name="${_csrf.parameterName}"

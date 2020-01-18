@@ -16,22 +16,19 @@
     <style>
         body {
 
-            background-image: url(${index1});
+            background-color: #ffffff ;
             background-size: 100%;
         }
     </style>
 </head>
-<body>
+<body style="text-align:center;">
 <%@ include file="../security/jspf/admin_menu.jspf"%>
 <c:url value="/resources/css/style.css" var="style"/>
 <link href="${style}" rel="stylesheet"/>
 <h2>Pracownicy:</h2>
-<ul>
     <c:forEach var="e" items="${employees}">
-        <li>${e.firstname} - ${e.lastname} - <a href="/emplo/edit/${e.id}">Edytuj</a></li>
+        <div>${e.firstname} - ${e.lastname} - <a href="/emplo/edit/${e.id}">Edytuj</a></div>
     </c:forEach>
-
-</ul>
 
 </body>
 </html>

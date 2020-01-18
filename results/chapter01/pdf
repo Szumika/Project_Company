@@ -1,0 +1,50 @@
+        String raports = "";
+        double cena = 0;
+
+        try
+        {
+            File file = new File(DEST);
+            file.getParentFile().mkdirs();
+            //Initialize PDF writer
+            PdfWriter writer = new PdfWriter(DEST);
+
+            //Initialize PDF document
+            PdfDocument pdf = new PdfDocument(writer);
+
+            // Initialize document
+            Document document = new Document(pdf);
+
+            for(int i = 0;i<orders.size();i++){
+                raports += "Przedmiot: " + orders.get(i).getItem().getName()+" - "+orders.get(i).getQuantity() + " - " + (orders.get(i).getQuantity() * orders.get(i).getItem().getPrize());
+                document.add(new Paragraph(raports));
+                cena += (orders.get(i).getQuantity() * orders.get(i).getItem().getPrize());
+            }
+
+            document.add(new Paragraph("Podsumowanie:" + cena));
+
+            /* Upto here its working fine but below content not working */
+
+            document.close();
+            FontProgram fontProgram = FontProgramFactory.createFont( ) ;
+            PdfFont font = PdfFontFactory.createFont( fontProgram, "cp1252" ) ;
+            document.setFont( font );
+
+            FileInputStream fin = new FileInputStream(file);
+            ServletOutputStream outStream = response.getOutputStream();
+            response.setContentType("application/pdf");
+            response.setHeader("Content-Disposition", "attachment;filename=test.pdf");
+            byte[] buffer = new byte[1024];
+            int n = 0;
+            while ((n = fin.read(buffer)) != -1)
+            {
+                outStream.write(buffer, 0, n);
+            }
+            outStream.flush();
+            fin.close();
+            outStream.close();
+            return  "employ/ordered";
+
+        }catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }

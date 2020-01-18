@@ -17,27 +17,30 @@
     <style>
         body {
 
-            background-image: url(${index1});
+            background-color: #ffffff ;
             background-size: 100%;
         }
     </style>
 </head>
-<body>
+<body style="text-align:center;">
 <%@ include file="security/jspf/main_menu.jspf"%>
 <c:url value="/resources/css/style.css" var="style"/>
 <link href="${style}" rel="stylesheet"/>
 
+
 <form:form method="post" modelAttribute="order">
     <div>
-        <form:label path="quantity">Ilosc:</form:label>
+        <form:label path="quantity">Ilość:</form:label>
         <form:input path="quantity"  id="quantity"/>
-        <form:errors path="quantity"></form:errors>
     </div>
     <div>
         <form:label path="item">Produkt:</form:label>
-        <form:select path="item.id" items="${items}"
+        <form:select  path="item.id" items="${items}"
                      itemLabel="name" itemValue="id"/>
         <form:errors path="item"></form:errors>
+    </div>
+    <div>
+        <form:errors path="*" />
     </div>
     <input type="submit">
 </form:form>

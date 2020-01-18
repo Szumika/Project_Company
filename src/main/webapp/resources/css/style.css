@@ -1,8 +1,22 @@
 body
 {
-    color: #999966;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 17px;
+    color: #050505;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 22px;
+}
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+}
+body.content {
+    max-width: 500px;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+p.center {
+    margin-left:auto;
+    margin-right:auto;
 }
 
 h2
@@ -19,6 +33,12 @@ h2
     margin-left: 100px;
 }
 
+.index1{
+    width:705px;
+    height:317px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .index3{
     margin-left: 200px;
     width:310px;
@@ -31,12 +51,12 @@ h2
     margin-top: 5px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 60px;
-    color:ghostwhite;
+    color:#050505;
     margin-right: 10px;
 }
 
 a{
-    color:#61D6C6;
+    color:#050505;
 }
 a:link {text-decoration:none;}
 a:visited {text-decoration:none;}

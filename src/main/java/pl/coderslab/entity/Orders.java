@@ -1,5 +1,7 @@
 package pl.coderslab.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import pl.coderslab.dto.OrderDTO;
 import pl.coderslab.entity.security.User;
 
 import javax.persistence.*;
@@ -12,7 +14,7 @@ public class Orders {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private long id;
-@Min(value = 50,message = "Minimalne zamowienie to 50 sztuk :)")
+@Min(50)
 private int quantity;
 private LocalDateTime created;
 private String status;
@@ -71,5 +73,6 @@ private User user;
     public void setUser(User user) {
         this.user = user;
     }
+
 
 }

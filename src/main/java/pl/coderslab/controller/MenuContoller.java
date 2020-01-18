@@ -48,19 +48,6 @@ public class MenuContoller {
     return "communication";
 }
 
-@GetMapping("/group")
-public String groups(){
-    return ("groups");
-}
-
-@GetMapping("/employee/{grpid}")
-public String employee(@PathVariable long grpid , Model model){
-    groups grp = this.gr.findOne(grpid);
-    List<Employee> employees = this.er.findAllByGroup(grp);
-    model.addAttribute("employees",employees);
-    return "employ";
-}
-
     @GetMapping("/order")
     public String addBookFormVali(@Valid Orders order, BindingResult result,Model m){
         m.addAttribute("order",new Orders());
@@ -76,6 +63,7 @@ public String employee(@PathVariable long grpid , Model model){
         order.setCreated(LocalDateTime.now());
         User user = ur.findByUsername(auth.getName());
         order.setUser(user);
+//        Orders order1 = new Orders(order);
         this.or.save(order);
         return  "/items";
     }

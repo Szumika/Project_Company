@@ -1,5 +1,6 @@
 package pl.coderslab.entity.security;
 
+import org.hibernate.validator.constraints.Email;
 import org.jboss.aerogear.security.otp.api.Base32;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
@@ -13,6 +14,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String username;
+    @Email
     private String email;
     private String password;
     private boolean enabled;

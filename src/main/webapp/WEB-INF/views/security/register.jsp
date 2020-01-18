@@ -8,16 +8,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <%@ include file="jspf/head_config.jspf"%>
-    <c:url value="/resources/jpg/tlo.jpg" var="index1"/>
+    <c:url value="/resources/jpg/head.png" var="index1"/>
     <style>
         body {
 
-            background-image: url(${index1});
+            background-color: #ffffff ;
             background-size: 100%;
         }
     </style>
 </head>
-<body>
+<body style="text-align:center;">
+<div align="center">
+    <img src="${index1} ">
+</div>
 <%@ include file="jspf/header.jspf"%>
 <%@ include file="jspf/main_menu.jspf"%>
 <c:url value="/resources/css/style.css" var="style"/>
@@ -25,19 +28,19 @@
 <p class='error'>${msg}</p>
 <form:form modelAttribute="user" method="post" enctype="utf8">
     <div>
-        <form:label path="username">username</form:label>
+        <form:label path="username">Login</form:label>
         <form:input path="username" />
     </div>
     <div>
-        <form:label path="email">email</form:label>
+        <form:label path="email">E-mail</form:label>
         <form:input type="email" path="email" />
     </div>
     <div>
-        <form:label path="password">password</form:label>
+        <form:label path="password">hasło</form:label>
         <form:password path="password" />
     </div>
     <div>
-        <form:label path="matchingPassword">matchingPassword</form:label>
+        <form:label path="matchingPassword">hasło</form:label>
         <form:password path="matchingPassword" />
     </div>
     <input type="hidden" name="${_csrf.parameterName}"

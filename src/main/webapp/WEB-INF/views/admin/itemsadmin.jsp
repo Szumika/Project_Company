@@ -16,12 +16,12 @@
     <style>
         body {
 
-            background-image: url(${index1});
+            background-color: #ffffff ;
             background-size: 100%;
         }
     </style>
 </head>
-<body>
+<body style="text-align:center;">
 <%--<%@ include file="security/jspf/menu.jspf"%>--%>
 <%@ include file="../security/jspf/admin_menu.jspf"%>
 <c:url value="/resources/css/style.css" var="style"/>
@@ -29,12 +29,11 @@
 
 <h2>Artykuly:</h2>
 <div>
-    <ul>
+
         <c:forEach var="item" items="${items}">
-            <li>Nazwa produktu: ${item.name} Kolor: ${item.color} Cena: ${item.prize} zl -
-                <a href="/item/edit/${item.id}">edycja</a> - <a href="item/del/${item.id}">usum</a> </li>
+            <div>Nazwa produktu: ${item.name} Kolor: ${item.color} Cena: ${item.prize} zl -
+                <a href="/item/edit/${item.id}">edycja</a> - <a href="item/del/${item.id}">usum</a> </div>
         </c:forEach>
-    </ul>
 </div>
 <div>
     <h3><a href="/add/items">Dodaj produkt</a> </h3>

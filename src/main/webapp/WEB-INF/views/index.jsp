@@ -12,13 +12,12 @@
     <style>
         body {
 
-            background-image: url(${index1});
+            background-color: #ffffff ;
             background-size: 100%;
         }
     </style>
 </head>
-<body onload="odliczanie();">
-<div id='watch'>12:00:00</div>
+<body style="text-align:center;">
 <%@ include file="security/jspf/main_menu.jspf"%>
 <c:url value="/resources/css/style.css" var="style"/>
 <link href="${style}" rel="stylesheet"/>

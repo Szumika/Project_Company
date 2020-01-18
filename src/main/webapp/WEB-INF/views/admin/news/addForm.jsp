@@ -16,19 +16,19 @@
     <style>
         body {
 
-            background-image: url(${index1});
+            background-color: #ffffff ;
             background-size: 100%;
         }
     </style>
 </head>
-<body>
+<body style="text-align:center;">
 <%@ include file="../../security/jspf/admin_menu.jspf"%>
 <c:url value="/resources/css/style.css" var="style"/>
 <link href="${style}" rel="stylesheet"/>
 
 <form:form method="post" modelAttribute="news">
     <div>
-        <form:label path="title">Tytul:</form:label>
+        <form:label path="title">Tytuł:</form:label>
         <form:input path="title" id="title"/>
     </div>
     <div>
